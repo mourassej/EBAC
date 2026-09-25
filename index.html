@@ -227,6 +227,89 @@
     border-radius:0 0 8px 8px;
     text-transform:uppercase;
   }
+  .whatsapp-card{
+    display:block;
+    width:100%;
+    margin-bottom:14px;
+    padding:22px 22px 20px;
+    border-radius:22px;
+    text-decoration:none;
+    background:linear-gradient(135deg, var(--brown) 0%, var(--brown-dark) 100%);
+    box-shadow:0 14px 30px rgba(46,32,19,0.28);
+    position:relative;
+    overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .whatsapp-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 36px rgba(46,32,19,0.34);
+  }
+  .whatsapp-card::after{
+    content:"";
+    position:absolute;
+    top:-30px;
+    right:-30px;
+    width:140px;
+    height:140px;
+    border:14px solid rgba(230,196,124,0.12);
+    border-radius:50%;
+  }
+  .whatsapp-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:16px;
+    position:relative;
+    z-index:1;
+  }
+  .whatsapp-avatar{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.14);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold-soft);
+    flex:0 0 auto;
+  }
+  .whatsapp-avatar svg{ width:23px; height:23px; }
+  .whatsapp-top div{ color:#fff; }
+  .whatsapp-name{
+    font-weight:700;
+    font-size:16px;
+    line-height:1.2;
+  }
+  .whatsapp-number{
+    font-size:13px;
+    color:rgba(255,255,255,0.75);
+    margin-top:2px;
+  }
+  .whatsapp-desc{
+    color:#fff;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    margin:0 0 18px;
+    position:relative;
+    z-index:1;
+  }
+  .whatsapp-cta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    padding:13px 20px;
+    background:var(--gold);
+    color:var(--brown-dark);
+    border-radius:999px;
+    font-weight:700;
+    font-size:14.5px;
+    position:relative;
+    z-index:1;
+  }
   footer{
     margin-top:38px;
     text-align:center;
@@ -282,16 +365,21 @@
 
     <div class="divider"></div>
 
-    <nav class="links">
-      <a class="link-btn featured" href="https://wa.me/5511991877957" target="_blank" rel="noopener">
-        <span class="badge">Fale agora</span>
-        <span class="icon icon-whatsapp">
+    <a class="whatsapp-card" href="https://wa.me/5511991877957" target="_blank" rel="noopener">
+      <div class="whatsapp-top">
+        <span class="whatsapp-avatar">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.14-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.19 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43 0 1.43 1.05 2.82 1.19 3.01.15.19 2.06 3.15 5 4.42.7.3 1.25.48 1.68.61.7.22 1.34.19 1.85.12.56-.08 1.72-.7 1.97-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.55 22 22.02 17.52 22.02 12S17.55 2 12.02 2zm0 18.14c-1.66 0-3.2-.46-4.52-1.25l-.32-.19-3 .79.8-2.93-.21-.3a8.12 8.12 0 0 1-1.27-4.36c0-4.5 3.66-8.15 8.16-8.15 4.5 0 8.16 3.65 8.16 8.15 0 4.5-3.66 8.24-8.16 8.24z"/></svg>
         </span>
-        <span class="link-text">WhatsApp<small>(11) 99187-7957 · atendimento rápido</small></span>
-        <span class="arrow">›</span>
-      </a>
+        <div>
+          <div class="whatsapp-name">WhatsApp</div>
+          <div class="whatsapp-number">+55 11 99187-7957</div>
+        </div>
+      </div>
+      <p class="whatsapp-desc">Atendimento contábil e fiscal</p>
+      <span class="whatsapp-cta">Iniciar conversa →</span>
+    </a>
 
+    <nav class="links">
       <a class="link-btn" href="https://www.instagram.com/truecontassessoria" target="_blank" rel="noopener">
         <span class="icon icon-instagram">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.41.56.21.96.47 1.38.89.42.42.68.82.89 1.38.17.42.36 1.05.41 2.22.06 1.27.07 1.64.07 4.85 0 3.2-.01 3.58-.07 4.85-.05 1.17-.24 1.8-.41 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.17-1.05.36-2.22.41-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-1.17-.05-1.8-.24-2.22-.41-.56-.21-.96-.47-1.38-.89-.42-.42-.68-.82-.89-1.38-.17-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.64-.07-4.85 0-3.2.01-3.58.07-4.85.05-1.17.24-1.8.41-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.17 1.05-.36 2.22-.41 1.27-.06 1.64-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
